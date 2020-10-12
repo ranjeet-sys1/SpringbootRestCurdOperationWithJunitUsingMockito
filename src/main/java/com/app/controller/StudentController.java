@@ -3,6 +3,7 @@ package com.app.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -19,10 +20,12 @@ import com.app.service.StudentService;
 
 @RestController
 public class StudentController {
+	
 	@Autowired
 	private StudentService service;
 	@GetMapping("/getAll")
 	public ResponseEntity<?> getAll(){
+		
 		ResponseEntity<?> resp=null;
 		try {
 			List<Student> all = service.getAll();
